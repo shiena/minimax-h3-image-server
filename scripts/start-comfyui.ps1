@@ -19,6 +19,10 @@ function Test-LocalServer([string]$Url) {
 }
 
 & "$PSScriptRoot\start-api.ps1"
+$llmRoot = Join-Path (Split-Path $ComfyRoot -Parent) 'prompt-llm'
+if (Test-Path -LiteralPath "$llmRoot\models\qwen2.5-3b-instruct-q4_k_m.gguf") {
+    & "$PSScriptRoot\start-prompt-llm.ps1" -LlmRoot $llmRoot
+}
 if (-not (Test-LocalServer 'http://127.0.0.1:8188/system_stats')) {
     $comfy = Start-Process -FilePath "$ComfyRoot\.venv\Scripts\python.exe" -ArgumentList @('main.py', '--listen', '127.0.0.1', '--port', '8188', '--disable-auto-launch', '--offline') -WorkingDirectory $ComfyRoot -WindowStyle Hidden -RedirectStandardOutput "$logs\comfy.stdout.log" -RedirectStandardError "$logs\comfy.stderr.log" -PassThru
     $comfy.Id | Set-Content "$logs\comfy.pid"

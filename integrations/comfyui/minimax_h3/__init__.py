@@ -12,6 +12,7 @@ from urllib3.util.retry import Retry
 import comfy.model_management as memory
 import comfy.utils
 from comfy_api.latest import ComfyExtension, io
+from .prompt_translate import JapanesePromptToEnglish
 
 
 
@@ -90,7 +91,7 @@ class MiniMaxH3Image(io.ComfyNode):
 
 class MiniMaxH3Extension(ComfyExtension):
     async def get_node_list(self):
-        return [MiniMaxH3Image]
+        return [MiniMaxH3Image, JapanesePromptToEnglish]
 
 
 async def comfy_entrypoint():

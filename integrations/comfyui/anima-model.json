@@ -1,0 +1,21 @@
+{
+  "repo": "circlestone-labs/Anima",
+  "revision": "6e0b2da2112573380abfb6a1435a60a994b254f2",
+  "files": [
+    {
+      "file": "split_files/diffusion_models/anima-turbo-v1.1.safetensors",
+      "size": 4182230656,
+      "sha256": "fba11953276b57edf59d1dc4f1857ac05aa079c56f982b4d7c20298d57d3f7eb"
+    },
+    {
+      "file": "split_files/text_encoders/qwen_3_06b_base.safetensors",
+      "size": 1192135096,
+      "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+    },
+    {
+      "file": "split_files/vae/qwen_image_vae.safetensors",
+      "size": 253806246,
+      "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+    }
+  ]
+}

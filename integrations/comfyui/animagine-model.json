@@ -1,0 +1,9 @@
+{
+  "repo": "cagliostrolab/animagine-xl-4.0",
+  "revision": "2b7c1b397761bf5bd3cc42e5b39ec99314a75a96",
+  "file": "animagine-xl-4.0-opt.safetensors",
+  "size": 6938350040,
+  "sha256": "6327eca98bfb6538dd7a4edce22484a1bbc57a8cff6b11d075d40da1afb847ac",
+  "source": "https://huggingface.co/cagliostrolab/animagine-xl-4.0",
+  "license": "CreativeML Open RAIL++-M"
+}

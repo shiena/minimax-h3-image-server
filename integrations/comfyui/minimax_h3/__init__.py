@@ -13,6 +13,7 @@ import comfy.model_management as memory
 import comfy.utils
 from comfy_api.latest import ComfyExtension, io
 from .prompt_translate import JapanesePromptToEnglish
+from .save_prompt import SaveImageWithPositivePrompt
 
 
 
@@ -91,7 +92,7 @@ class MiniMaxH3Image(io.ComfyNode):
 
 class MiniMaxH3Extension(ComfyExtension):
     async def get_node_list(self):
-        return [MiniMaxH3Image, JapanesePromptToEnglish]
+        return [MiniMaxH3Image, JapanesePromptToEnglish, SaveImageWithPositivePrompt]
 
 
 async def comfy_entrypoint():

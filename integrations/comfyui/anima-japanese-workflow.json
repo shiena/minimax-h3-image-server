@@ -2,7 +2,7 @@
   "id": "anima-japanese-prompt",
   "revision": 0,
   "last_node_id": 46,
-  "last_link_id": 82,
+  "last_link_id": 83,
   "nodes": [
     {
       "id": 15,
@@ -118,7 +118,7 @@
     },
     {
       "id": 1,
-      "type": "SaveImage",
+      "type": "SaveImageWithPositivePrompt",
       "pos": [
         1270.985848991242,
         244.28516798983227
@@ -135,11 +135,16 @@
           "name": "images",
           "type": "IMAGE",
           "link": 77
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": 83
         }
       ],
       "outputs": [],
       "properties": {
-        "Node name for S&R": "SaveImage"
+        "Node name for S&R": "SaveImageWithPositivePrompt"
       },
       "widgets_values": [
         "Anima/character"
@@ -383,7 +388,8 @@
           "name": "english_prompt",
           "type": "STRING",
           "links": [
-            82
+            82,
+            83
           ],
           "slot_index": 0
         }
@@ -476,6 +482,14 @@
       46,
       0,
       11,
+      1,
+      "STRING"
+    ],
+    [
+      83,
+      46,
+      0,
+      1,
       1,
       "STRING"
     ]

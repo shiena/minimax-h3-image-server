@@ -77,13 +77,17 @@
     }
   },
   "7": {
-    "class_type": "SaveImage",
+    "class_type": "SaveImageWithPositivePrompt",
     "inputs": {
       "images": [
         "6",
         0
       ],
-      "filename_prefix": "Animagine/character"
+      "filename_prefix": "Animagine/character",
+      "positive_prompt": [
+        "8",
+        0
+      ]
     }
   },
   "8": {

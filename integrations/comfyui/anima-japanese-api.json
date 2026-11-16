@@ -92,13 +92,17 @@
     }
   },
   "1": {
-    "class_type": "SaveImage",
+    "class_type": "SaveImageWithPositivePrompt",
     "inputs": {
       "images": [
         "8",
         0
       ],
-      "filename_prefix": "Anima/character"
+      "filename_prefix": "Anima/character",
+      "positive_prompt": [
+        "46",
+        0
+      ]
     }
   },
   "46": {

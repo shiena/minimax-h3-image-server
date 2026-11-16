@@ -1,6 +1,6 @@
 {
   "last_node_id": 8,
-  "last_link_id": 10,
+  "last_link_id": 11,
   "nodes": [
     {
       "id": 1,
@@ -273,7 +273,7 @@
     },
     {
       "id": 7,
-      "type": "SaveImage",
+      "type": "SaveImageWithPositivePrompt",
       "pos": [
         1540,
         100
@@ -290,11 +290,16 @@
           "name": "images",
           "type": "IMAGE",
           "link": 9
+        },
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "link": 11
         }
       ],
       "outputs": [],
       "properties": {
-        "Node name for S&R": "SaveImage"
+        "Node name for S&R": "SaveImageWithPositivePrompt"
       },
       "widgets_values": [
         "Animagine/character"
@@ -320,7 +325,8 @@
           "name": "english_prompt",
           "type": "STRING",
           "links": [
-            10
+            10,
+            11
           ],
           "slot_index": 0
         }
@@ -413,6 +419,14 @@
       8,
       0,
       2,
+      1,
+      "STRING"
+    ],
+    [
+      11,
+      8,
+      0,
+      7,
       1,
       "STRING"
     ]

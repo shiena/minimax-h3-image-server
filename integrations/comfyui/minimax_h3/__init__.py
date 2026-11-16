@@ -15,6 +15,7 @@ from comfy_api.latest import ComfyExtension, io
 from .prompt_translate import JapanesePromptToEnglish
 from .save_prompt import SaveImageWithPositivePrompt
 
+WEB_DIRECTORY = "./web"
 
 
 class MiniMaxH3Image(io.ComfyNode):

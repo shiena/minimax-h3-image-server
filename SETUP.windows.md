@@ -473,7 +473,32 @@ Get-NetTCPConnection -State Listen -LocalPort 8188, 8633 |
     Select-Object LocalAddress, LocalPort, OwningProcess
 ```
 
-表示されたPIDをタスクマネージャーの［詳細］で確認し、対象のサーバープロセスを終了します。ほかのPythonプロセスをまとめて終了しないでください。再起動時は、起動スクリプトを再実行します。
+起動スクリプトに対応する停止スクリプトを、H3リポジトリから実行します。停止はプロセスの終了です。生成中に実行すると処理が中断されるため、先にジョブの完了を確認してください。
+
+| 起動 | 停止 | 停止対象 |
+|---|---|---|
+| `start-api.ps1` | `stop-api.ps1` | H3 APIのみ |
+| `start-comfyui.ps1` | `stop-comfyui.ps1` | ComfyUI、H3 API、翻訳LLM |
+| `start-prompt-llm.ps1` | `stop-prompt-llm.ps1` | 翻訳LLMのみ |
+
+```powershell
+& .\scripts\stop-comfyui.ps1 -ComfyRoot ..\ComfyUI
+```
+
+個別に停止する場合は、次のいずれかを実行します。
+
+```powershell
+& .\scripts\stop-api.ps1
+& .\scripts\stop-prompt-llm.ps1 -LlmRoot ..\prompt-llm
+```
+
+`-WhatIf`を付けると、停止対象の確認だけを実行します。
+
+```powershell
+& .\scripts\stop-comfyui.ps1 -ComfyRoot ..\ComfyUI -WhatIf
+```
+
+停止スクリプトは、待ち受けポートとプロセスの実行内容を確認します。PIDファイルだけを根拠に終了しません。対象が停止済みなら何も終了せず、別のプロセスが同じポートを使用していればエラーにします。起動時に再利用した既存サーバーも停止対象です。再起動時は、対応する起動スクリプトを実行します。
 
 ## 関連ファイル
 
